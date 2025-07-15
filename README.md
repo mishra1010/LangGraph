@@ -23,4 +23,13 @@ C:\LangGraph\LangGraph>python -m venv venv
 
  from langgraph.graph import StateGraph
 
+ Sequential workflows
+
+## Day 2
+
+Parallel workflows
+
+1. Batsman workflow
+
+2. UPSC essay workflow
  
