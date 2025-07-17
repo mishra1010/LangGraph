@@ -32,4 +32,18 @@ Parallel workflows
 1. Batsman workflow
 
 2. UPSC essay workflow
+
+## Day 3 - Conditional workflows in LangGraph
+
+We have seen
+
+1. Sequential workflows
+
+2. Parallel workflows
+
+3. Conditional workflow - we will see today. 
+
+    - we will see a non-llm workflow - Quadratic Equation
+    
+    - then we will see one with LLM  - Customer support
  
