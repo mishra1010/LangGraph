@@ -46,4 +46,15 @@ We have seen
     - we will see a non-llm workflow - Quadratic Equation
     
     - then we will see one with LLM  - Customer support
- 
+    find sentiment from user feedback then for negative response we will run diagnosis to check issue-type, tone of user, urgency shown by user in the form of json and then
+    we will use this for our response to user and end workflow
+    
+    1. we will focus on getting the sentiment from the review. Either positive or negative. we needto get a structured output from LLM, so first define a schema
+
+    2. check a prompt to get the sentiment
+
+    3. Define state ReviewState
+
+    4. Now lets create a graph (pass reviewstate here), add nodes , create functions and add edges
+
+    5. 
