@@ -57,4 +57,18 @@ We have seen
 
     4. Now lets create a graph (pass reviewstate here), add nodes , create functions and add edges
 
-    5. 
+## Day 4 - Iterative or Looping workflows in LangGraph
+
+Automated workflow -> Generate post -> Post in LinkedIn, Insta etc.
+
+How to understand if the post generated is having any quality issues? Iterative workflow
+
+Topic -> LLM generate -> LLM evaluate -> good then -> end and HITL -> API
+                                      -> if not good -> optimize LLM -> approve or improve loop
+
+Lets build the workflow in LangGraph with 3 llms - generator llm, evaluator llm, optimizer llm
+
+file - post_generation
+
+
+
