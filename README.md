@@ -68,7 +68,38 @@ Topic -> LLM generate -> LLM evaluate -> good then -> end and HITL -> API
 
 Lets build the workflow in LangGraph with 3 llms - generator llm, evaluator llm, optimizer llm
 
+
 file - post_generation
 
+## Day 5 - Build a Chatbot using LangGraph
+
+file - 9_basic_chatbot
+
+State - messages - Annotated list and add_messages(acts as reducer)
+
+Why we use add_messages reducer here - state generally replaces old state and adds new state which would remove the old message in this case as we get new messages added.
+
+So, we will use add_messages
+
+Annotated list will extend BaseMessages so that we will have user message, system message or Ai message or to message
+
+last time we had used operator.add as the reducer
+
+This workflow does not store prev messages in memory. When invoke function is called, previous message get erased.. So, we need to use persistence
+
+In persistence , state is not erased at the End. This message is stored in memory or db. DB is used in the industry. So, we will import memorysaver module
+
+### This workflow does not store prev messages in memory. When invoke function is called, previous message get erased.. So, we need to use persistence
+### In persistence , state is not erased at the End. This message is stored in memory or db. For implementing this import MemorySaver from LG and then 
+### use checkpointer while declaring graph and pass checkpointer(memory saver) in compiler. Then wwhile invoking use thread_id to identify each of the chat sessions, each chat is a thread
+### Before invoking , create a config variable and pass a configurable dictionary with thread_id. This will help in storing the messages in memory or db. We need to pass this config variable in invoke function.
+
+State -> RAM
+
+Next chat triggers workflow and then LG fetches state from RAM
+
+Then passes the full state with message
+
+which helps in persistence
 
 
