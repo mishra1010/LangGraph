@@ -102,4 +102,25 @@ Then passes the full state with message
 
 which helps in persistence
 
+## Day 6 - Persistence and Time Travel in LangGraph
+
+Persistence ?
+
+Why its needed?
+
+How we can achieve this in LangGraph
+
+We know Grath and state. When we execute4 invoke, there will be state changes for variables and each of the node needs to make changes and can access these changes. Once invoke is over based on workflow execution, in LG all the state related details are erased from memory. Persistence helps to save and restore state of a workflow over time.
+
+It helps to store intermediate values of state as well alsong with final values.
+
+It also helps with fault tolerance as we can rerun workflows from where they failed. Persistence is implemented withthe help of Checkpointers.
+
+Threads - Each execution of workflow is assigned a threadid. Based on this information can be pulled out from db for previous invocations. Ex - previous chats
+
+Coding a sequential workflow to check persistence
+
+Benefits -
+
+Short term memory, Fault tolerant, HITL, Time Travel
 
