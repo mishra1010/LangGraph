@@ -124,3 +124,25 @@ Benefits -
 
 Short term memory, Fault tolerant, HITL, Time Travel
 
+## Day 7 - Creating a User Interface for chatbot
+
+Use streamlit
+
+Plan of action - Divide chatbot in to 2 parts.
+
+1. Backend with LLM
+
+2. Frontend
+
+Backend code is all available in 9_basic_chatbot file. We need to build fronend for this.
+
+1. Create chat interface using streamlit library
+
+2. Connect langgraph with streamlit
+
+Now, we first see message from user, then assistant and the area from where we can type the message
+
+then we will see a simple copy message. Whatever user types, assistant copiesthe same and shows. When we retype any input message, it overwrites the previous message.
+
+Then we will just connect with llm
+
