@@ -146,3 +146,46 @@ then we will see a simple copy message. Whatever user types, assistant copiesthe
 
 Then we will just connect with llm
 
+## Day 8 - Streaming in LangGraph
+
+Show text as and when response is sent from LLM, streaming seems to be like human like conversation and its more user friendly. Important for multimodal UIs.
+
+integrate it in lnggraph_backend file
+
+### Streaming - langgraph_backend.py
+
+stream = chatbot.stream(
+
+    {'messages': [HumanMessage(content='What is the recipe to make pasta?')]},
+
+    config= {'configurable': {'thread_id': 'thread-1'}},
+
+    stream_mode='messages'
+)
+
+print(type(stream)) ------------- output is of type generator
+
+stream object has 2 objects - message chunk, metadata
+
+Use these in backend to stream data
+
+### Streaming in chatbot using langgraph
+
+for message_chunk, metadata in chatbot.stream(
+
+    {'messages': [HumanMessage(content='What is the recipe to make pasta?')]},
+
+    config= {'configurable': {'thread_id': 'thread-1'}},
+
+    stream_mode='messages'
+
+):
+
+    if message_chunk.content:
+
+        print(message_chunk.content, end=" ", flush=True)
+
+
+Now lets make the changes with streamlit in frontend.
+
+comment the whole code modified in backend, now make changes in frontend.
