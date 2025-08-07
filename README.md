@@ -189,3 +189,20 @@ for message_chunk, metadata in chatbot.stream(
 Now lets make the changes with streamlit in frontend.
 
 comment the whole code modified in backend, now make changes in frontend.
+
+## Day 9 - Building resume chat feature in  LangGraph
+
+File - streamlit_frontend_threading.py
+
+Chat sessions can start and then we can resume the session as needed. we will implement - New chat and resume chat functionality.
+
+The backendfile will not change and only frontend would be changed for this. Break down the bit task to 4 small tasks
+
+1. Add a sidebar - Generate thread_ids via program automatically instead of manual way, Display thread id in sidebar
+
+2. Add a New Chat Button - add functionality for the chat button on click to load a new conversation - open a new chat window, generate thread id, replace old thread id and generate a session, save the messages in message history
+
+3. Create a list and store all thread_ids - After the second point implementation, old thread id is getting lost, so we need to save it
+
+4. On clicking a particular thread id, load that particular conversation - Make a button so that when we chick thread id button, chat will resume
+
