@@ -19,10 +19,11 @@ def add_threads(thread_id):
     if thread_id not in st.session_state['chat_threads']:
         st.session_state['chat_threads'].append(thread_id)
 
+# This function can be used to load conversation history for a specific thread_id
 def load_conversation(thread_id):
-    # This function can be used to load conversation history for a specific thread_id
-    return chatbot.get_state(config={'configurable': {'thread_id': thread_id}}).values('messages')
-
+    return chatbot.get_state(config=
+    {'configurable': {'thread_id': thread_id}}
+    ).values["messages"]
 # st.session_state -> dict -> does not delete message history when the app is rerun. so, we will use this with message_history 
 # 
 # message_history = []
@@ -90,7 +91,7 @@ if user_input:
     with st.chat_message('user'):
         st.text(user_input)
     
-    CONFIG = {'configurable': {'thread_id': 'st.session_state["thread_id"]'}}
+    CONFIG = {'configurable': {'thread_id': st.session_state["thread_id"]}}
 
     # response = chatbot.invoke({'messages': [HumanMessage(content=user_input)]}, config=CONFIG)
     # ai_message = response['messages'][-1].content
