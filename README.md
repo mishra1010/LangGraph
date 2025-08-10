@@ -204,5 +204,25 @@ The backendfile will not change and only frontend would be changed for this. Bre
 
 3. Create a list and store all thread_ids - After the second point implementation, old thread id is getting lost, so we need to save it
 
-4. On clicking a particular thread id, load that particular conversation - Make a button so that when we chick thread id button, chat will resume
+4. On clicking a particular thread id, load that particular conversation - Make a button so that when we chick thread id button, chat will resume with all history in that thread
 
+## Day 10 - LangGraph + SQLite = Chatbot that remembers
+
+We used in-memory previously and then resume chat. We will use database with chatbot in this session which will help resume the chat.
+
+Steps -
+
+1. Create a new frontend and backend files
+
+     pip install langgraph-checkpoint-sqllite
+     import sqlitesaverinstead of inmemorysaver
+     create sqlite db
+     then connect in backendfile
+     invoke chatbot
+     make changes to frontend just at the session setup
+
+Files
+
+langgraphdb_backend
+
+streamlit_frontend_db
