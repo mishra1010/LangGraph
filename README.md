@@ -226,3 +226,43 @@ Files
 langgraphdb_backend
 
 streamlit_frontend_db
+
+## Day 11 - LangSmith for observability
+
+Folder - Langgraph/LangSmith/
+
+Download code from github - https://github.com/campusx-official/langsmith-masterclass.git
+
+create a virtual env
+
+dsadmin@Tools MINGW64 /c/LangGraph/LangGraph/LangSmith (main)
+$  python -m venv langsmith
+
+dsadmin@Tools MINGW64 /c/LangGraph/LangGraph/LangSmith (main)
+$ source langsmith/Scripts/activate
+(langsmith) 
+
+Install libs from requirement.txt 
+
+pip install -r requirements.txt
+
+create an account in LangSmith
+
+Create an .env file
+
+Edit API keys
+
+## Day 12 - Observability in LG
+
+Add langsmith parameters in .env file in the streamlit chatbot project
+
+LANGCHAIN_ENDPOINT='https://api.smith.langchain.com'
+LANGCHAIN_API_KEY=''
+LANGCHAIN_PROJECT='demo'
+
+When we just introduce observability with langSmith, all threads are captured in the same project. If we want separate threads to be tracked separately then make changes to CONFIG parameter in code and add configurable, metadata and run_name.
+
+
+
+
+
