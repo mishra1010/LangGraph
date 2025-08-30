@@ -262,7 +262,41 @@ LANGCHAIN_PROJECT='demo'
 
 When we just introduce observability with langSmith, all threads are captured in the same project. If we want separate threads to be tracked separately then make changes to CONFIG parameter in code and add configurable, metadata and run_name.
 
+## Day 13 - Tools in LangGraph
 
+Tools node - has all tools and tool executor
 
+Tools
 
+Toolcalls
+
+Tools condition - chat or perform action?
+
+In this case we give a prompt, based on this tools condition decides if this is a chat or it has to peform any action based on any of the tools and then sends the prompt to the tool and gets the output to user
+
+But this output is not a great output for user as LLM output along with tools can give lot of content which does not need to be there in the output. so, we have to create a loop between tool and llm chat and then the output by tool can be refined and multiple steps can be followed before sending output to the user
+ 
+Create a loop from tools and LLM to use all tools in loops as needed for multiple questions in a prompt needing multiple nodes
+
+In our chatbot we get great results and it prints backend message and AI message. So , we need to just print the AI message. So, we have to make a change
+
+Hi
+Hello! How can I assist you today?
+
+What is the product of 255 and 234?
+
+{"result": 59670.0}The product of 255 and 234 is 59,670.
+
+After changes we get
+
+What is the product of 23 and 764?
+
+The product of 23 and 764 is 17,572.
+
+Some more changes and adding streamlit status container gives 
+
+What is the product of 234 and 763?
+✅ Tool finished
+
+The product of 234 and 763 is 178,542.
 
