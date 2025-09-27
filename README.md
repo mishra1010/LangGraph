@@ -300,3 +300,28 @@ What is the product of 234 and 763?
 
 The product of 234 and 763 is 178,542.
 
+## Day 14 - MCP build
+
+python -m venv venv
+
+dsadmin@Tools MINGW64 /c/LangGraph/LangGraph/Exptrackmcp (main)
+do a conda init to get the .venv folder
+$source .venv/Scripts/activate
+
+pip install uv
+
+uv init .
+
+uv add fastmcp
+
+fastmcp version
+
+uv run fastmcp dev main.py  --- shows mcp inspector tool for any debugging
+
+uv run fastmcp run main.py --- runs the mcp server
+
+Now we can connect clients to this like claude desktop or vscode
+
+uv run fastmcp install claude-desktop main.py
+
+
