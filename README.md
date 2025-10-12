@@ -324,4 +324,30 @@ Now we can connect clients to this like claude desktop or vscode
 
 uv run fastmcp install claude-desktop main.py
 
+# Day 15 - Build remote MCP
+
+Only configuration changes, else most of the code would remain same for local and remote mcp server
+
+Steps to create a simple remote server -
+
+1. Install uv
+2. Create new folder
+3. Open folder in vs code
+4. uv init .
+5. uv add fastmcp
+6. create a simple server
+7. Run the server - uv run main.py
+8. Test the server using mcp inspector
+9. Create a GitHub response
+10. git init
+11. git add .
+12. git commit -m "message"
+13. git remote dd origin <github url>
+14. git push -u origin main
+15. create an account on FastMCP cloud
+16. Deploy on FastMCP cloud
+
+
+
+
 
